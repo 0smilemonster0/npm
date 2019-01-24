@@ -6,11 +6,11 @@ conf = require('./conf'),
 express = require('express'),
 app = express();
 
-const credentials = {
-	key: fs.readFileSync (conf.key),
-	cert: [fs.readFileSync(conf.cert)],
-	ca: [fs.readFileSync(conf.chain), fs.readFileSync(conf.fullchain)]
-}
+// const credentials = {
+// 	key: fs.readFileSync (conf.key),
+// 	cert: [fs.readFileSync(conf.cert)],
+// 	ca: [fs.readFileSync(conf.chain), fs.readFileSync(conf.fullchain)]
+// }
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
